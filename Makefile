@@ -38,8 +38,8 @@ docker-publish:
 	@docker push $(IMAGE)
 
 .PHONY: run # Run the application
-run:
-	@echo "⚠️ 'run' unimplemented"
+run: docker-build
+	@docker run -it -p 8000:8080 $(IMAGE)
 
 .PHONY: ci # Perform CI specific tasks to perform on a pull request
 ci:
@@ -47,7 +47,7 @@ ci:
 
 .PHONY: release # Release the latest version of the application
 release:
-	@echo "⚠️ 'release' unimplemented"
+	@kubectl --namespace dashboard set image deployment svg-to-dxf web=docker.cluster.fun/averagemarcus/svg-to-dxf:$(SHA)
 
 .PHONY: help # Show this list of commands
 help:
