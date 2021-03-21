@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>svg-to-dxf</title>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 473.7 473.7' stroke='%2327162a' stroke-width='2'%3E%3Ccircle cx='236.8' cy='236.8' r='236.8' fill='%2371cad1'/%3E%3Cpath d='M144.3 93.7a16 16 0 00-16 16v255.6a16 16 0 0016 16H328a16 16 0 0016-16V167.7l-77-74H144.3z' fill='%23ef71a8'/%3E%3Cg%3E%3Cpath d='M344 167.7h-61a16 16 0 01-16-16v-58l77 74z' fill='%23ef71a8'/%3E%3Cpath d='M263.8 271.6c0 10.2-8.2 18.4-18.4 18.4H110.8a18.4 18.4 0 01-18.4-18.4v-56.3c0-10.2 8.2-18.4 18.4-18.4h134.6c10.2 0 18.4 8.2 18.4 18.4v56.3z' fill='%23ef71a8'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M135 226.6h9.8c2.6 0 4.8.3 6.7.8 1.8.4 3.5 1.3 5 2.6 3.9 3.4 5.8 8.5 5.8 15.3a30 30 0 01-.6 6.1 16.9 16.9 0 01-5 9 13 13 0 01-7 3.4c-1.4.2-3 .3-4.7.3h-9.9c-1.4 0-2.4-.2-3.1-.6a3 3 0 01-1.4-1.8c-.2-.7-.3-1.7-.3-3v-27.4c0-1.6.4-2.8 1.1-3.6.7-.7 2-1 3.5-1zm2.9 6v25.5h5.7l3-.1c.7 0 1.5-.3 2.2-.5a6 6 0 002-1.2c2.6-2.1 3.8-5.8 3.8-11 0-3.8-.5-6.5-1.6-8.4a7.4 7.4 0 00-4.2-3.5 20 20 0 00-5.9-.8h-5z' fill='%23fff'/%3E%3Cpath d='M167.6 256.8l8.4-12.2-7-10.9c-.7-1-1.2-2-1.5-2.7-.4-.8-.5-1.5-.5-2.2 0-.7.3-1.4 1-2 .6-.5 1.3-.8 2.3-.8 1 0 1.8.3 2.4 1 .6.6 1.4 1.7 2.5 3.4l5.6 9.1 6-9.1 1.3-2c.3-.5.6-1 1-1.3.3-.4.7-.6 1-.8.4-.2 1-.3 1.4-.3 1 0 1.8.3 2.4.9.6.5.9 1.2.9 2 0 1.1-.7 2.7-2 4.6l-7.4 11 8 12.3 1.5 2.7c.3.7.5 1.4.5 2 0 .6-.1 1.2-.4 1.6s-.7 1-1.2 1.2a3.5 3.5 0 01-3.6 0c-.5-.3-1-.7-1.2-1.1l-1.8-2.6-6.5-10.4-7 10.7a80.3 80.3 0 01-2 2.8 3.6 3.6 0 01-2.8 1c-.9 0-1.6-.2-2.2-.8-.7-.5-1-1.4-1-2.4 0-1.3.7-2.8 2-4.7z' fill='%23fff'/%3E%3Cpath d='M223 232.5h-15v9.6h12.6c1.1 0 2 .2 2.6.8.5.5.8 1.2.8 2s-.3 1.6-.9 2.1c-.5.5-1.4.8-2.5.8H208V260c0 1.6-.4 2.8-1.1 3.5-.7.8-1.6 1.2-2.7 1.2s-2-.4-2.8-1.2c-.7-.8-1-2-1-3.5v-28.8c0-1.1.1-2 .5-2.7a3 3 0 011.5-1.5c.7-.3 1.5-.5 2.6-.5h18a4 4 0 012.6.8c.6.6.9 1.3.9 2.2 0 .8-.3 1.6-.9 2-.6.6-1.5.9-2.7.9z' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E">
+
+  <meta property="og:title" content="svg-to-dxf">
+  <meta property="og:site_name" content="svg-to-dxf">
+  <meta property="og:url" content="https://svg-to-dxf.cluster.fun">
+  <meta property="og:description" content="Convert .svg files to .dxf">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@Marcus_Noble_" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+  <link rel="stylesheet" href="https://githubraw.com/AverageMarcus/milligram/master/dist/milligram.min.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading-fancy">
+      svg-to-dxf
+      <svg style="height: 50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 473.7 473.7" stroke="#27162a" stroke-width="4"><circle cx="236.8" cy="236.8" r="236.8" fill="#71cad1"/><path d="M144.3 93.7a16 16 0 00-16 16v255.6a16 16 0 0016 16H328a16 16 0 0016-16V167.7l-77-74H144.3z" fill="#ef71a8"/><g><path d="M344 167.7h-61a16 16 0 01-16-16v-58l77 74z" fill="#ef71a8"/><path d="M263.8 271.6c0 10.2-8.2 18.4-18.4 18.4H110.8a18.4 18.4 0 01-18.4-18.4v-56.3c0-10.2 8.2-18.4 18.4-18.4h134.6c10.2 0 18.4 8.2 18.4 18.4v56.3z" fill="#ef71a8"/></g><g><path d="M135 226.6h9.8c2.6 0 4.8.3 6.7.8 1.8.4 3.5 1.3 5 2.6 3.9 3.4 5.8 8.5 5.8 15.3a30 30 0 01-.6 6.1 16.9 16.9 0 01-5 9 13 13 0 01-7 3.4c-1.4.2-3 .3-4.7.3h-9.9c-1.4 0-2.4-.2-3.1-.6a3 3 0 01-1.4-1.8c-.2-.7-.3-1.7-.3-3v-27.4c0-1.6.4-2.8 1.1-3.6.7-.7 2-1 3.5-1zm2.9 6v25.5h5.7l3-.1c.7 0 1.5-.3 2.2-.5a6 6 0 002-1.2c2.6-2.1 3.8-5.8 3.8-11 0-3.8-.5-6.5-1.6-8.4a7.4 7.4 0 00-4.2-3.5 20 20 0 00-5.9-.8h-5z" fill="#fff"/><path d="M167.6 256.8l8.4-12.2-7-10.9c-.7-1-1.2-2-1.5-2.7-.4-.8-.5-1.5-.5-2.2 0-.7.3-1.4 1-2 .6-.5 1.3-.8 2.3-.8 1 0 1.8.3 2.4 1 .6.6 1.4 1.7 2.5 3.4l5.6 9.1 6-9.1 1.3-2c.3-.5.6-1 1-1.3.3-.4.7-.6 1-.8.4-.2 1-.3 1.4-.3 1 0 1.8.3 2.4.9.6.5.9 1.2.9 2 0 1.1-.7 2.7-2 4.6l-7.4 11 8 12.3 1.5 2.7c.3.7.5 1.4.5 2 0 .6-.1 1.2-.4 1.6s-.7 1-1.2 1.2a3.5 3.5 0 01-3.6 0c-.5-.3-1-.7-1.2-1.1l-1.8-2.6-6.5-10.4-7 10.7a80.3 80.3 0 01-2 2.8 3.6 3.6 0 01-2.8 1c-.9 0-1.6-.2-2.2-.8-.7-.5-1-1.4-1-2.4 0-1.3.7-2.8 2-4.7z" fill="#fff"/><path d="M223 232.5h-15v9.6h12.6c1.1 0 2 .2 2.6.8.5.5.8 1.2.8 2s-.3 1.6-.9 2.1c-.5.5-1.4.8-2.5.8H208V260c0 1.6-.4 2.8-1.1 3.5-.7.8-1.6 1.2-2.7 1.2s-2-.4-2.8-1.2c-.7-.8-1-2-1-3.5v-28.8c0-1.1.1-2 .5-2.7a3 3 0 011.5-1.5c.7-.3 1.5-.5 2.6-.5h18a4 4 0 012.6.8c.6.6.9 1.3.9 2.2 0 .8-.3 1.6-.9 2-.6.6-1.5.9-2.7.9z" fill="#fff"/></g></svg>
+    </h1>
+
+    <blockquote>
+      Convert .svg files to .dxf
+    </blockquote>
+
+    <p>
+      Enter the URL of an SVG file and press convert to download the file as a <code>.dxf</code>.
+    </p>
+
+    <div class="row">
+      <form method="GET" action="/" class="column column-80 column-offset-10">
+        <fieldset>
+          <label>
+            SVG URL
+            <input id="svgUrl" name="url" placeholder="e.g. https://www.svgrepo.com/show/144403/stars.svg" />
+          </label>
+          <input type="submit" value="Convert" />
+        </fieldset>
+      </form>
+    </div>
+
+    <p>
+      Upload an SVG file and press convert to download the file as a <code>.dxf</code>.
+    </p>
+
+    <div class="row">
+      <form method="POST" action="/" enctype="multipart/form-data" class="column column-80 column-offset-10">
+        <fieldset>
+          <label>
+            SVG<br>
+            <input id="fileupload" name="svg" type="file" />
+          </label>
+          <input type="submit" value="Convert" />
+        </fieldset>
+      </form>
+    </div>
+
+    <hr>
+
+    <div>
+      Source code available on <a href="https://github.com/AverageMarcus/svg-to-dxf" target="_blank" rel="noopener noreferrer">GitHub</a>, <a href="https://gitlab.com/AverageMarcus/svg-to-dxf" target="_blank" rel="noopener noreferrer">GitLab</a>, <a href="https://bitbucket.org/AverageMarcus/svg-to-dxf/" target="_blank" rel="noopener noreferrer">Bitbucket</a> & <a href="https://git.cluster.fun/AverageMarcus/svg-to-dxf" target="_blank" rel="noopener noreferrer">my own Gitea server</a>.
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="column column-60 column-offset-20">
+        <footer>
+          Made with
+          <svg height="20" class="fill-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 449.3 449.3" xmlns:xlink="http://www.w3.org/1999/xlink"><title>love</title><g><path d="M0 162.7c1.5-7.7 2.7-15.4 4.5-23A125.5 125.5 0 0132 88a136.3 136.3 0 0162.7-40.6c8.3-2.9 17.7-3.2 26.6-3.7a134 134 0 0155.6 6.6c14.9 5.7 30 11 41 23.6 17-20 36.4-36.3 60-46.4 12-5.2 25.7-6.9 38.7-9.4a79.4 79.4 0 0140.3 3.2 96.4 96.4 0 0143.2 26 209.8 209.8 0 0137.8 55.4 133.2 133.2 0 0111 65.7c-3.2 42.2-21 79-41.5 114.8a431.2 431.2 0 01-47.6 64.3c-19.6 23-39.7 45.7-59.6 68.5-3.7 4.3-7.2 9-11.7 12.4-7.3 5.4-15.9 4.9-23.8 1.5-21.9-9.2-43.8-18.5-65.3-28.5a520.1 520.1 0 01-98-58.7c-28.2-21.5-55.5-44.3-74-75.3a183.8 183.8 0 01-25-61.4c-1-6.2-1.6-12.6-2.4-18.8v-24.5zM138 281l2.5.1c0 2.1.3 4.3 0 6.3l-9 55.5c-.3 1.6 0 4.2 1 5 5.8 4.1 11.8 7.8 17.9 11.8l11-59.7 2.5.3c3.7 21.6-6.3 42-7.6 63.5l19.4 9.6c.5-18 2.2-35 6.9-51.6 1.3 4 1.5 8 1.2 12-.7 11.2-1 22.5-2.6 33.7-1 7.3 1.9 10.6 8 13.3 27 11.7 54.1 23.5 81 35.7 5.5 2.5 8.8 1.5 12.6-2.9 12.5-14.4 25.7-28.1 38-42.7 17.2-20.2 34.5-40.5 50.5-61.7 29.5-39.2 52.7-81.7 61-131 3.6-21.7 2-43-5.6-63.5a176 176 0 00-33.9-54.5 84.8 84.8 0 00-38-26 91.2 91.2 0 00-44.2-2.5c-13 2-25.6 5.1-37.2 12.3a208.6 208.6 0 00-45.9 37c-5.7 6.3-7.8 6.4-15 1.4-5.7-4-11-8.8-17.2-11.9-15.1-7.5-30.7-14.4-48-14.9-13.7-.4-28-2-41.2 1-36 8.4-62.7 30-80.3 62.8a111 111 0 00-11.7 56.6c.3 10 1.4 20 2.2 29.9 7-18.9 11-38.3 19.7-56.3.6 3 .6 6 0 8.7l-14.5 53.2c-.7 2.6-2 5.7-1.2 8 2.7 8.4 6.2 16.6 9.4 24.8 0-20 13.7-63.9 21.8-66.8 0 .6.3 1.1.2 1.6a11936 11936 0 01-17 64c-.3 1.4-1.6 2.6-2.9 4.5l9.7 17a573 573 0 0120-67.3l2.9.7c-1 5-1.5 10-2.8 14.9-4.7 17.2-9.6 34.3-14.2 51.5-.7 2.5-1.5 6-.3 7.8 3.6 5.6 8 10.7 12.4 16.1 1.8-8.6 3.1-16.6 5.2-24.4 3.1-11.5 6.6-22.9 10.2-34.3.8-2.6 2.7-5 4-7.4l2 .8c-.1 1.6-.1 3.4-.5 5l-12.2 47.4c-4.6 17.9-4.3 18.9 7.8 29.4 2.2 1.8 4.5 3.5 7 5.3 3.7-31 12.5-64.7 18.4-68-.3 3.5-.3 6.6-.9 9.6l-12.7 58.8c-.3 1.2-.7 3-.1 3.5 4.7 4.4 9.6 8.6 14.5 12.9 3.5-21.4 7.6-41.7 13.6-61.6 3.4 8.7.6 17-.8 25.2-1.9 11.6-4.5 23.1-6.5 34.7-.4 2.3-.4 6 1 7 4.8 4.2 10.3 7.4 16 11.3 3.9-21.5 5.5-42.6 12.6-62.5z"/><path d="M323.2 180.5a24 24 0 01-24.5-19.7c-2-9.7.7-20.2 15-27 16.6-7.8 38.3 2.3 41.6 19.5 1.2 6.6-1.6 12.1-6 16.3a35.1 35.1 0 01-26 11z"/><path d="M138.9 167.1a31 31 0 0125 12.7 22 22 0 01-13.6 34.9 29.9 29.9 0 01-31-9.9c-6-7-7.6-15.3-4.1-24.1 3.7-9.5 12-12 21-13.5.8-.2 1.8 0 2.7 0z"/><path d="M233.2 202c-18.5-.4-33.7-13.6-34-29.7 0-4.2.4-8 5.4-8.7 4.5-.7 6.6 2.3 8 6 2.3 6.6 5.5 12.4 12.4 15.4 7.5 3.2 14 1.5 20.4-3.3 6.2-4.7 6.4-11 4.7-17.5-1.4-5.2.4-8.4 4.7-10.2 4.3-1.7 9 1.3 10.9 6.2 7.2 19.8-5.7 34.6-22.8 40.2-3 1-6.5 1-9.7 1.6z"/><path d="M201.2 384.7c-.9-2-2.7-4.2-2.5-6.2 1.2-14 2.8-28.1 4.4-42.2 0-.9.7-1.7 1-2.6l2.6 1.1-3.1 49.1-2.4.8z"/><path d="M222 387.4c-4.8-5.7-5-15-1-37.8 3.1 3 4 30.5 1 37.8z"/><path d="M240.9 361.7l-1.4 20.2c-4.8-3.3-4.6-11.9-.2-20.4l1.6.2z"/><path d="M257.4 380.4c-4.1-5.2-3.7-9.7 1-14.7l-1 14.7z"/></g></svg>
+          by <a href="https://marcusnoble.co.uk" class="fancy-link">Marcus Noble</a>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

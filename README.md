@@ -1,10 +1,12 @@
-# svg-to-dxf
+![svg-to-dxf](logo.png)
 
-Convert .svg files to .dxf
+> Convert .svg files to .dxf
+
+Available at https://svg-to-dxf.cluster.fun/
 
 ## Features
 
-Runs a webserver that takes in an `?url=` query string, fetches the SVG from that URL and then returns it as a .dxf
+Runs a webserver that takes in an `?url=` query string and fetches the SVG from that URL or an svg file uploaded and then returns it as a .dxf
 
 ## Usage
 

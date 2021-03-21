@@ -1,6 +1,7 @@
 package main
 
 import (
+	"embed"
 	"errors"
 	"fmt"
 	"io"
@@ -9,6 +10,9 @@ import (
 	"os"
 	"os/exec"
 )
+
+//go:embed index.html
+var content embed.FS
 
 var port = os.Getenv("PORT")
 
@@ -19,19 +23,38 @@ func main() {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		svgURL := r.URL.Query().Get("url")
-		if svgURL == "" {
+		r.ParseMultipartForm(1000000)
+
+		uploadedFile, fileHeader, err := r.FormFile("svg")
+
+		if svgURL == "" && (fileHeader == nil || fileHeader.Size == 0) {
+			body, _ := content.ReadFile("index.html")
+			w.Write(body)
 			return
 		}
-		fmt.Println("Fetching " + svgURL)
 
 		filename := "/app/" + randomString(7) + ".svg"
-
 		fmt.Println("Filename: " + filename)
-		if err := downloadFile(svgURL, filename); err != nil {
-			fmt.Fprintf(w, err.Error())
-			return
+
+		if svgURL != "" {
+			fmt.Println("Fetching " + svgURL)
+			if err := downloadFile(svgURL, filename); err != nil {
+				fmt.Fprintf(w, err.Error())
+				return
+			}
+			fmt.Println("Downloaded SVG")
+		} else {
+			file, err := os.Create(filename)
+			if err != nil {
+				return
+			}
+			defer file.Close()
+
+			_, err = io.Copy(file, uploadedFile)
+			if err != nil {
+				return
+			}
 		}
-		fmt.Println("Downloaded SVG")
 
 		dxf, err := convertToDXF(filename)
 		if err != nil {

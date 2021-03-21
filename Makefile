@@ -31,7 +31,7 @@ build: lint check-format fetch-deps
 
 .PHONY: docker-build # Build the docker image
 docker-build:
-	@docker build build --tag $(IMAGE) .
+	@docker build --tag $(IMAGE) .
 
 .PHONY: docker-publish # Push the docker image to the remote registry
 docker-publish:
@@ -39,7 +39,7 @@ docker-publish:
 
 .PHONY: run # Run the application
 run: docker-build
-	@docker run -it -p 8000:8080 $(IMAGE)
+	@docker run -it -p 8080:8080 $(IMAGE)
 
 .PHONY: ci # Perform CI specific tasks to perform on a pull request
 ci:
