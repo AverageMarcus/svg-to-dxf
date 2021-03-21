@@ -47,7 +47,7 @@ ci:
 
 .PHONY: release # Release the latest version of the application
 release:
-	@kubectl --namespace dashboard set image deployment svg-to-dxf web=docker.cluster.fun/averagemarcus/svg-to-dxf:$(SHA)
+	@kubectl --namespace svg-to-dxf set image deployment svg-to-dxf web=docker.cluster.fun/averagemarcus/svg-to-dxf:$(SHA)
 
 .PHONY: help # Show this list of commands
 help:
