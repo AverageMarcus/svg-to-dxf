@@ -9,6 +9,8 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
+	"regexp"
+	"strings"
 )
 
 //go:embed index.html
@@ -36,14 +38,22 @@ func main() {
 		filename := "/app/" + randomString(7) + ".svg"
 		fmt.Println("Filename: " + filename)
 
+		outFilename := "out"
+
 		if svgURL != "" {
 			fmt.Println("Fetching " + svgURL)
+			re := regexp.MustCompile(`(?m)/([\w|-]+)\.svg$`)
+			matches := re.FindStringSubmatch(svgURL)
+			if len(matches) == 2 {
+				outFilename = matches[1]
+			}
 			if err := downloadFile(svgURL, filename); err != nil {
 				fmt.Fprintf(w, err.Error())
 				return
 			}
 			fmt.Println("Downloaded SVG")
 		} else {
+			outFilename = strings.ReplaceAll(fileHeader.Filename, ".svg", "")
 			file, err := os.Create(filename)
 			if err != nil {
 				return
@@ -65,7 +75,7 @@ func main() {
 
 		w.Header().Add("Content-Type", "application/octet-stream")
 		w.Header().Add("Content-Length", fmt.Sprint(len(dxf)))
-		w.Header().Add("Content-Disposition", "inline; filename=out.dxf")
+		w.Header().Add("Content-Disposition", fmt.Sprintf("inline; filename=%s.dxf", outFilename))
 		fmt.Fprintf(w, string(dxf))
 
 		os.Remove(filename)
